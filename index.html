@@ -11,7 +11,7 @@
 </head>
 <body>
 <button id="cmd" onclick="toPDF()">generate pdf</button>
-<div class="audiogram__wrapper container__new" id="test" style="transform: none;">
+<div class="audiogram__wrapper container__new" style="transform: none;">
     <aside class="aside">
 
         <div class="theiaStickySidebar" ><div class="aside__wrapper">
@@ -47,7 +47,7 @@
 
 
 
-        <section class="md__content">
+        <section class="md__content"  id="test">
             <h1 id="Опродукте">О продукте</h1>
             <p><strong>Audiogram</strong> – это сервис на базе нейронных сетей и методов машинного обучения для распознавания и синтеза речи. Audiogram позволяет выполнять:</p>
             <ul>
@@ -1692,14 +1692,9 @@
 <!--</script>-->
 <script>
 function toPDF () {
-    let $btns = $('.js-show-more').not('.active')
-    $btns.each(function(){
-        $(this).click()
-    })
-    $('.menu__aside li').css('margin-top','0')
-    $('.menu__aside .js-show-more.active').css('display', 'none')
+
     setTimeout(function(){
-        let element = $('.md__content');
+        let element = document.getElementById('test');
         html2pdf().set({
             margin: 5,
             jsPDF: {
